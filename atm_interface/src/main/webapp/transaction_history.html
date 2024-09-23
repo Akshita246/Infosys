@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <link rel="stylesheet" href="transaction_history.css">
+</head>
+<body>
+    <div class="history-container">
+        <h2>📜 Transaction History</h2>
+        <form id="historyForm" action="transaction_history" method="post">
+            <div class="input-group">
+                <label for="accountNumber">Account Number</label>
+                <input type="text" id="accountNumber" name="accountNumber" maxlength="16" pattern="\d{16}" placeholder="Enter your account number">
+            </div>
+            <button type="submit">Show Transactions</button>
+        </form>
+        <div id="history-results">
+            <!-- Transaction history will be displayed here -->
+        </div>
+    </div>
+</body>
+</html>

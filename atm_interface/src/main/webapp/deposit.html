@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Money</title>
+    <link rel="stylesheet" href="deposit.css">
+</head>
+<body>
+    <div class="deposit-container">
+        <h2>💰 Deposit Money</h2>
+        <form action="/atm_interface/deposit" method="post">
+            <div class="input-group">
+                <label for="accountNumber">Account Number</label>
+                <input type="text" id="accountNumber" name="accountNumber" required maxlength="16" pattern="\d{16}" placeholder="Enter your account number">
+            </div>
+            <br>
+            <div class="input-group">
+                <label for="depositAmount">Amount</label>
+                <input type="number" id="depositAmount" name="depositAmount" required min="1" placeholder="Enter amount to deposit">
+            </div>
+            <br>
+            <button type="submit">Deposit</button>
+        </form>
+    </div>
+</body>
+</html>

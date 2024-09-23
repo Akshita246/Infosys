@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="loginForm.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>✨ Welcome! Let's Get You Logged In and On Your Way!</h2>
+        <form action="/atm_interface/loginForm" method="post">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" required maxlength="16" pattern="\d{16}" placeholder="Enter your 16-digit card number">
+            </div>
+            <div class="input-group">
+                <label for="pin">PIN</label>
+                <input type="password" id="pin" name="pin" required maxlength="4" pattern="\d{4}" placeholder="Enter your 4-digit PIN">
+            </div>
+            <button type="submit" value="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

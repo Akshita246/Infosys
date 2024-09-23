@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Balance</title>
+    <link rel="stylesheet" href="check_balance.css">
+    <script>
+        async function checkBalance(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            const accountNumber = document.getElementById('accountNumber').value;
+            const response = await fetch('/atm_interface/check_balance', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'accountNumber': accountNumber
+                })
+            });
+
+            const result = await response.text();
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</head>
+<body>
+    <div class="check-balance-container">
+        <h2>💰 Check Balance</h2>
+        <form id="checkBalanceForm" onsubmit="checkBalance(event)">
+            <div class="input-group">
+                <label for="accountNumber">Account Number</label>
+                <input type="text" id="accountNumber" name="accountNumber" required maxlength="16" pattern="\d{16}" placeholder="Enter your account number">
+            </div>
+            <br>
+            <button type="submit">Check Balance</button>
+        </form>
+        <div id="result"></div>
+    </div>
+</body>
+</html>
